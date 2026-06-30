@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 
 import api from "../api";
+import { Link } from "react-router-dom";
 
 const Orders = () => {
   const [orders, setOrders] = useState([]);
@@ -18,13 +19,15 @@ const Orders = () => {
     }
   };
 
-
   if (orders.length === 0) {
     return (
       <div className="orders">
         <div className="no-orders">
           <h3>No Orders</h3>
           <p>You haven't placed any orders yet.</p>
+          <Link to={"/"} className="btn">
+            Get started
+          </Link>
         </div>
       </div>
     );

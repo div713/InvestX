@@ -14,7 +14,7 @@ const RegisterPage = () => {
     e.preventDefault();
 
     try {
-      await axios.post("http://localhost:3002/register", {
+      await axios.post(`${import.meta.env.VITE_BACKEND_URL}/register`, {
         username,
         email,
         password,
